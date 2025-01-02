@@ -1,0 +1,20 @@
+Configuring and verify ip v4 addressing with switches with VLAN.
+
+Configure and verify ipv4 on switches with VLAN insureing connectivity accross switches
+and VLAN.
+
+Devices Required
+Cisco switches 2960- 2qty
+PC with ethernet interface- 2qty
+CONSOLE CABLE
+ETHERNET CABLE
+PC WITH TERMINAL SOFTWARE
+
+
+IPV4 ADDRESS TABLE
+
+SWITCH 1-VLAN 1-192.168.0.100 255.255.255.0
+SWITCH 2-VLAN 1-192.168.0.200 255.255.255.0
+
+HOST 1-FA0/0-192.168.0.1 255.255.255.0
+HOST 2-FA0/1-192.168.0.2 255.255.255.0

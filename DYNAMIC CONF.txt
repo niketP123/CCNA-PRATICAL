@@ -1,0 +1,22 @@
+en
+conf t
+int g0/0
+ip nat inside
+int s0/3/0
+ip nat outside
+exit
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat pool ?
+ip nat pool pooll ?
+ip nat pool pooll 1.2.3.10 ?
+ip nat pool pooll 1.2.3.10 1.2.3.20 ?
+ip nat pool pooll 1.2.3.10 1.2.3.20 netmask ?
+ip nat pool pooll 1.2.3.10 1.2.3.20 netmask 255.255.255.0
+ip nat inside source ?
+ip nat inside source list ?
+ip nat inside source list 1 ?
+ip nat inside source list 1 pool ?
+ip nat inside source list 1 pool pooll 
+exit
+
+sh ip nat transltion
