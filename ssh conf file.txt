@@ -1,0 +1,50 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface GigabitEthernet0/0/0
+Router(config-if)#EXIT
+Router(config)#END
+
+
+Router#en
+Router#conf t	
+Router(config)#hostname router1
+router1(config)#interface gigabitethernet 0/0/0
+router1(config-if)#ip addr 192.168.16.1 255.255.255.0
+router1(config-if)#no shut
+	
+router1(config-if)#ip domain name myorg
+router1(config)#crypto key gen
+router1(config)#crypto key generate rsa
+The name for the keys will be: router1.myorg
+
+How many bits in the modulus [512]: 512
+% Generating 512 bit RSA keys, keys will be non-exportable...[OK]
+
+router1(config)#en password 1234
+router1(config)#username admin
+router1(config)#username admin password 1234
+router1(config)#ip ssh version 2 
+router1(config)#line vty 0 15
+router1(config-line)#transport input ssh
+router1(config-line)#login local
+router1(config-line)#exit
+router1(config)#en password 1234
+router1(config)#username admin password 1234
+router1(config)#exit
+
+router1#
+router1#en
+router1#conf t
+router1(config)#en password admin
+router1(config)#username admin password admin
+router1(config)#int vlan1
+router1(config-if)#exit
+router1(config)#en password 1234
+
+router1(config)#enable password 1234
+router1(config)#username cisco password 1234
+router1(config)#line vty 0 15
+router1(config-line)#transport input ssh
+router1(config-line)#login local
+router1(config-line)#exit
